@@ -1,0 +1,36 @@
+{
+    "homepage": "http://snakenest.com/snaketail/",
+    "license": "GPL-3.0-only",
+    "version": "1.9.5",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/snakefoot/snaketail-net/releases/download/1.9.5/SnakeTail.v1.9.5.x64.msi",
+            "hash": "59b5e0e3e78c9d1c24b123e9703b622c71c0f96345cf1c903f314db78f0351f4"
+        },
+        "32bit": {
+            "url": "https://github.com/snakefoot/snaketail-net/releases/download/1.9.5/SnakeTail.v1.9.5.x86.msi",
+            "hash": "67700c52a8df11620904901a09a15df4fc0e637f51fe0c36bbe12fb5ccb73b6a"
+        }
+    },
+    "bin": "SnakeTail.exe",
+    "extract_dir": "SnakeTail",
+    "checkver": {
+        "github": "https://github.com/snakefoot/snaketail-net"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/snakefoot/snaketail-net/releases/download/$version/SnakeTail.v$version.x64.msi"
+            },
+            "32bit": {
+                "url": "https://github.com/snakefoot/snaketail-net/releases/download/$version/SnakeTail.v$version.x86.msi"
+            }
+        }
+    },
+    "shortcuts": [
+        [
+            "SnakeTail.exe",
+            "SnakeTail"
+        ]
+    ]
+}

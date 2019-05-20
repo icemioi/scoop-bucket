@@ -1,0 +1,24 @@
+{
+    "homepage": "https://github.com/ipfs-shipyard/ipfs-desktop",
+    "version": "0.7.2",
+    "description": "A desktop client for IPFS.",
+    "license": "MIT",
+    "url": "https://github.com/ipfs-shipyard/ipfs-desktop/releases/download/v0.7.2/ipfs-desktop-setup-0.7.2.exe#/dl.7z",
+    "hash": "sha512:3a132b8cfa532371538102a10957868f3ee34bcee1df36f4ac6ad5b34e2c6bcc0d655c2efe5c9c4c047767fcc33181af452cd5c2d44717f6f5369a03c452d829",
+    "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
+    "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\" -Recurse",
+    "shortcuts": [
+        [
+            "IPFS Desktop.exe",
+            "IPFS Desktop"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/ipfs-shipyard/ipfs-desktop/releases/download/v$version/ipfs-desktop-setup-$version.exe#/dl.7z",
+        "hash": {
+            "url": "$baseurl/latest.yml",
+            "find": "sha512:\\s+(.*)"
+        }
+    }
+}

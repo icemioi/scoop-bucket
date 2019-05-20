@@ -1,0 +1,29 @@
+{
+    "homepage": "http://www.faststone.org/FSViewerDetail.htm",
+    "version": "7.0",
+    "url": "http://www.faststonesoft.net/DN/FSViewer70.zip",
+    "hash": "e70f7fd9d89c89f95d82fd31ebb45e3f5239877ce28e51ee55a5d7043549e3c9",
+    "extract_dir": "FSViewer70",
+    "bin": "FSViewer.exe",
+    "shortcuts": [
+        [
+            "FSViewer.exe",
+            "FSViewer"
+        ]
+    ],
+    "persist": [
+        "FSSettings.db",
+        "HisFolderList.db"
+    ],
+    "pre_install": [
+        "if(!(Test-Path \"$persist_dir\\FSSettings.db\")) {New-Item (\"$persist_dir\\FSSettings.db\") -Type File | Out-Null}",
+        "if(!(Test-Path \"$persist_dir\\HisFolderList.db\")) {New-Item (\"$persist_dir\\HisFolderList.db\") -Type File | Out-Null}"
+    ],
+    "checkver": {
+        "re": "Version ([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "http://www.faststonesoft.net/DN/FSViewer$cleanVersion.zip",
+        "extract_dir": "FSViewer$cleanVersion"
+    }
+}

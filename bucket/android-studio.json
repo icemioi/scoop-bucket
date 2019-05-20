@@ -1,0 +1,48 @@
+{
+    "homepage": "https://developer.android.com/studio/",
+    "version": "3.4.1.0",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://developer.android.com/studio/terms.html"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://dl.google.com/dl/android/studio/ide-zips/3.4.1.0/android-studio-ide-183.5522156-windows.zip",
+            "hash": "34fb0eb7c965e86cfe2d26a9fd176e9faa78b245f71fe0ee250da5a393d96eff",
+            "shortcuts": [
+                [
+                    "bin\\studio64.exe",
+                    "Android Studio"
+                ]
+            ]
+        },
+        "32bit": {
+            "url": "https://dl.google.com/dl/android/studio/ide-zips/3.4.1.0/android-studio-ide-183.5522156-windows32.zip",
+            "hash": "34fb0eb7c965e86cfe2d26a9fd176e9faa78b245f71fe0ee250da5a393d96eff",
+            "shortcuts": [
+                [
+                    "bin\\studio.exe",
+                    "Android Studio"
+                ]
+            ]
+        }
+    },
+    "extract_dir": "android-studio",
+    "suggest": {
+        "SDK": "android-sdk"
+    },
+    "checkver": "ide-zips/(?<version>[\\d.]+)/android-studio-ide-(?<build>[\\d.]+)-windows",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://dl.google.com/dl/android/studio/ide-zips/$version/android-studio-ide-$matchBuild-windows.zip"
+            },
+            "32bit": {
+                "url": "https://dl.google.com/dl/android/studio/ide-zips/$version/android-studio-ide-$matchBuild-windows32.zip"
+            }
+        },
+        "hash": {
+            "url": "https://developer.android.com/studio/"
+        }
+    }
+}

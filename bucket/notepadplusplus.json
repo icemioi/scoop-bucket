@@ -1,0 +1,52 @@
+{
+    "homepage": "https://notepad-plus-plus.org/",
+    "version": "7.7",
+    "license": "GPL-2.0-only",
+    "notes": "The following page explains how to add explorer context menu entries for notepad++. http://docs.notepad-plus-plus.org/index.php/Explorer_Context_Menu",
+    "architecture": {
+        "64bit": {
+            "url": "https://notepad-plus-plus.org/repository/7.x/7.7/npp.7.7.bin.x64.7z",
+            "hash": "97d8c39276a86a0f2cb6c9ec6081aa0f7bdf0a70eac896a5187bb6493c96cfa6"
+        },
+        "32bit": {
+            "url": "https://notepad-plus-plus.org/repository/7.x/7.7/npp.7.7.bin.7z",
+            "hash": "a5068f28cb737f2a2182490e1761d01480f66d99735858e284becad2beaa7d30"
+        }
+    },
+    "checkver": "Current Version:.*?<span>(.*?)</span>",
+    "bin": "notepad++.exe",
+    "persist": [
+        "backup",
+        "cloud",
+        "plugins",
+        "themes",
+        "userDefineLangs",
+        "config.xml",
+        "session.xml",
+        "userDefineLang.xml"
+    ],
+    "pre_install": [
+        "Add-Content \"$dir/config.xml\" $null",
+        "Add-Content \"$dir/session.xml\" $null",
+        "Add-Content \"$dir/userDefineLang.xml\" $null"
+    ],
+    "shortcuts": [
+        [
+            "notepad++.exe",
+            "Notepad++"
+        ]
+    ],
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://notepad-plus-plus.org/repository/$majorVersion.x/$version/npp.$version.bin.x64.7z"
+            },
+            "32bit": {
+                "url": "https://notepad-plus-plus.org/repository/$majorVersion.x/$version/npp.$version.bin.7z"
+            }
+        },
+        "hash": {
+            "url": "https://notepad-plus-plus.org/repository/$majorVersion.x/$version/npp.$version.sha1.md5.digest.txt"
+        }
+    }
+}

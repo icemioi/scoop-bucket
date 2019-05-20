@@ -1,0 +1,33 @@
+{
+    "homepage": "https://www.eclipse.org",
+    "license": "EPL-1.0",
+    "version": "2019-03",
+    "architecture": {
+        "64bit": {
+            "url": "https://www.eclipse.org/downloads/download.php?r=1&file=/technology/epp/downloads/release/2019-03/R/eclipse-javascript-2019-03-R-win32-x86_64.zip",
+            "hash": "sha512:b6e9da2123f0dc26f22205c15259caa297985c23ff5742481ceb9548b9eca851e06efcf7fd05a71108e048c57d1b58bf76ff7dee1e18464f5a3998f313ab0c98"
+        }
+    },
+    "extract_dir": "eclipse",
+    "shortcuts": [
+        [
+            "eclipse.exe",
+            "Eclipse IDE for JavaScript and Web Developers"
+        ]
+    ],
+    "checkver": {
+        "url": "http://download.eclipse.org/technology/epp/downloads/release/release.xml",
+        "re": "\\<present\\>([\\d]{4}-[\\d]{2})\\/(?<r>[\\w]+)\\<\\/present\\>"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://www.eclipse.org/downloads/download.php?r=1&file=/technology/epp/downloads/release/$version/$matchR/eclipse-javascript-$version-$matchR-win32-x86_64.zip",
+                "hash": {
+                    "url": "https://download.eclipse.org/technology/epp/downloads/release/$version/$matchR/eclipse-javascript-$version-$matchR-win32-x86_64.zip.sha512",
+                    "find": "([a-fA-F0-9]{128})"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "version": "2.0.263",
+    "license": "MIT",
+    "url": "https://github.com/JanDeDobbeleer/oh-my-posh/releases/download/2.0.263/oh-my-posh.zip",
+    "homepage": "https://github.com/JanDeDobbeleer/oh-my-posh",
+    "hash": "e065cfbecdd89ec295b7f00affa20915a4767d13af9df9256f747c28b96e37d9",
+    "depends": "extras/posh-git",
+    "psmodule": {
+        "name": "oh-my-posh"
+    },
+    "checkver": {
+        "github": "https://github.com/JanDeDobbeleer/oh-my-posh"
+    },
+    "autoupdate": {
+        "url": "https://github.com/JanDeDobbeleer/oh-my-posh/releases/download/$version/oh-my-posh.zip"
+    },
+    "notes": [
+        "Oh-My-Posh must be manually enabled (add to $Profile to make it permanent):",
+        "Import-Module oh-my-posh"
+    ]
+}

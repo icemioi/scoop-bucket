@@ -1,0 +1,36 @@
+{
+    "homepage": "https://github.com/CobaltFusion/DebugViewPP",
+    "description": "DebugView++, collect, view and filter your application logs",
+    "license": "BSL-1.0",
+    "version": "1.8.0.46",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/CobaltFusion/DebugViewPP/releases/download/v1.8.0.46-x64/DebugView++.zip",
+            "hash": "3594a2b3f75f291449d635c08883762804b8d6b62565ce97f3aaa4cf1863fcff"
+        },
+        "32bit": {
+            "url": "https://github.com/CobaltFusion/DebugViewPP/releases/download/v1.8.0.46/DebugView++.zip",
+            "hash": "520fd2b939e211d1955ce4b315cb75690f382797689dea2f6f505a8401639635"
+        }
+    },
+    "bin": [
+        "DebugView++.exe",
+        [
+            "DebugView++.exe",
+            "DebugView"
+        ],
+        "DebugViewConsole.exe"
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/CobaltFusion/DebugViewPP/releases/download/v$version-x64/DebugView++.zip"
+            },
+            "32bit": {
+                "url": "https://github.com/CobaltFusion/DebugViewPP/releases/download/v$version/DebugView++.zip"
+            }
+        }
+    },
+    "notes": "The 'OutputForwarderVSIX.vsix' is located at '$dir'."
+}

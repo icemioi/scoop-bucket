@@ -1,0 +1,34 @@
+{
+    "homepage": "https://www.gimp.org/",
+    "license": "GPL-3.0-only",
+    "version": "2.10.10",
+    "url": "https://download.gimp.org/mirror/pub/gimp/v2.10/windows/gimp-2.10.10-setup.exe",
+    "hash": "c20024cce6a04005c1a515cf189339e30dc4b0115eaec37ba4b639b2f0d06fca",
+    "installer": {
+        "args": [
+            "/VERYSILENT",
+            "/NORESTART",
+            "/DIR=\"$dir\""
+        ]
+    },
+    "uninstaller": {
+        "file": "uninst\\unins000.exe",
+        "args": "/VERYSILENT"
+    },
+    "bin": [
+        [
+            "bin\\gimp-2.10.exe",
+            "gimp"
+        ]
+    ],
+    "checkver": {
+        "url": "https://www.gimp.org/downloads/",
+        "re": "gimp-(?<version>[\\d.]+)-setup(?<build>-\\d)?.exe"
+    },
+    "autoupdate": {
+        "url": "https://download.gimp.org/mirror/pub/gimp/v$majorVersion.$minorVersion/windows/gimp-$version-setup$matchBuild.exe",
+        "hash": {
+            "url": "$baseurl/SHA256SUMS"
+        }
+    }
+}

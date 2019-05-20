@@ -1,0 +1,25 @@
+{
+    "homepage": "https://fishcodelib.com/Database.htm",
+    "description": "Database .NET is an innovative, powerful and intuitive multiple database management tool.",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://fishcodelib.com/EULA.htm"
+    },
+    "version": "27.9.7079.1",
+    "hash": "f61dbe1ef26229a4e46a9cea9e2295eb36e8c9f8a0f357426c00af179ed1eada",
+    "url": "https://fishcodelib.com/files/DatabaseNet4.zip",
+    "shortcuts": [
+        [
+            "Database4.exe",
+            "Database .NET"
+        ]
+    ],
+    "persist": "Database_Files",
+    "checkver": {
+        "url": "https://fishcodelib.com/version.xml",
+        "re": "database4.*?ver=\"([\\d.]+)\""
+    },
+    "autoupdate": {
+        "url": "https://fishcodelib.com/files/DatabaseNet4.zip"
+    }
+}

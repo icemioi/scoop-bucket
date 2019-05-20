@@ -1,0 +1,49 @@
+{
+    "version": "1.4",
+    "homepage": "https://renderdoc.org",
+    "license": "MIT",
+    "checkver": {
+        "github": "https://github.com/baldurk/renderdoc"
+    },
+    "extract_dir": "PFiles\\RenderDoc",
+    "bin": [
+        [
+            "qrenderdoc.exe",
+            "renderdocgui"
+        ],
+        [
+            "renderdoccmd.exe",
+            "renderdoccli"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "qrenderdoc.exe",
+            "RenderDocGUI"
+        ],
+        [
+            "renderdoccmd.exe",
+            "RenderDocCLI"
+        ]
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://renderdoc.org/stable/1.4/RenderDoc_1.4_64.msi",
+            "hash": "aa14260e74f35fade30b9740afc90f98679b3e0961170837659a68305e96d1a3"
+        },
+        "32bit": {
+            "url": "https://renderdoc.org/stable/1.4/RenderDoc_1.4_32.msi",
+            "hash": "18256d7121378d4e6654bb5b209265497cc5bbcb05a0353f0f02ceeff63b8e60"
+        }
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://renderdoc.org/stable/$version/RenderDoc_$version_64.msi"
+            },
+            "32bit": {
+                "url": "https://renderdoc.org/stable/$version/RenderDoc_$version_32.msi"
+            }
+        }
+    }
+}

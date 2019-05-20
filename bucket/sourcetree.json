@@ -1,0 +1,26 @@
+{
+    "homepage": "https://www.sourcetreeapp.com/",
+    "description": "Simplicity and power in a beautiful Git GUI.",
+    "version": "3.1.2",
+    "url": "https://www.sourcetreeapp.com/update/windows/ga/SourceTree-3.1.2-full.nupkg",
+    "hash": "sha1:3335af6ddd8c0a378f0dd526b9d065f31bf31a28",
+    "extract_dir": "lib\\net45",
+    "bin": "sourcetree.exe",
+    "shortcuts": [
+        [
+            "sourcetree.exe",
+            "Atlassian SourceTree"
+        ]
+    ],
+    "checkver": {
+        "url": "https://www.sourcetreeapp.com/update/windows/ga/RELEASES",
+        "regex": "SourceTree-([\\d.]+)-full.nupkg",
+        "reverse": true
+    },
+    "autoupdate": {
+        "url": "https://www.sourcetreeapp.com/update/windows/ga/SourceTree-$version-full.nupkg",
+        "hash": {
+            "url": "$baseurl/RELEASES"
+        }
+    }
+}

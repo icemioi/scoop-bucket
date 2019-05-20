@@ -1,0 +1,21 @@
+{
+    "homepage": "https://www.foxitsoftware.com/",
+    "version": "9.5.0.20723",
+    "url": "https://cdn09.foxitsoftware.com/product/reader/desktop/win/9.5/FoxitReader95_enu_Setup.msi",
+    "hash": "75d70df3713b19450c44edb50da47f2f9c5c0284dc79c3bc683cf68a1178b1f3",
+    "extract_dir": "Foxit Software\\Foxit Reader",
+    "bin": "FoxitReader.exe",
+    "shortcuts": [
+        [
+            "FoxitReader.exe",
+            "Foxit Reader"
+        ]
+    ],
+    "checkver": {
+        "url": "https://www.foxitsoftware.com/downloads/downloadForm.php?retJson=1&product=Foxit-Reader&platform=Windows&language=English",
+        "jp": "$.package_info.version[0]"
+    },
+    "autoupdate": {
+        "url": "https://cdn09.foxitsoftware.com/product/reader/desktop/win/$majorVersion.$minorVersion/FoxitReader$majorVersion$minorVersion_enu_Setup.msi"
+    }
+}

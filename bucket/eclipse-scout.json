@@ -1,0 +1,33 @@
+{
+    "homepage": "https://www.eclipse.org",
+    "license": "EPL-1.0",
+    "version": "2019-03",
+    "architecture": {
+        "64bit": {
+            "url": "https://www.eclipse.org/downloads/download.php?r=1&file=/technology/epp/downloads/release/2019-03/R/eclipse-scout-2019-03-R-win32-x86_64.zip",
+            "hash": "sha512:521bf6729aa7fdfa7f8cc5881a6ca4f0056aec11693f141ff76481e348e75503ec08a5715f4ed6233793ed9979ca8bf2696bbf678689ac0f594d98e4110575ae"
+        }
+    },
+    "extract_dir": "eclipse",
+    "shortcuts": [
+        [
+            "eclipse.exe",
+            "Eclipse for Scout Developers"
+        ]
+    ],
+    "checkver": {
+        "url": "http://download.eclipse.org/technology/epp/downloads/release/release.xml",
+        "re": "\\<present\\>([\\d]{4}-[\\d]{2})\\/(?<r>[\\w]+)\\<\\/present\\>"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://www.eclipse.org/downloads/download.php?r=1&file=/technology/epp/downloads/release/$version/$matchR/eclipse-scout-$version-$matchR-win32-x86_64.zip",
+                "hash": {
+                    "url": "https://download.eclipse.org/technology/epp/downloads/release/$version/$matchR/eclipse-scout-$version-$matchR-win32-x86_64.zip.sha512",
+                    "find": "([a-fA-F0-9]{128})"
+                }
+            }
+        }
+    }
+}

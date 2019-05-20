@@ -1,0 +1,33 @@
+{
+    "homepage": "https://www.eclipse.org",
+    "license": "EPL-1.0",
+    "version": "2019-03",
+    "architecture": {
+        "64bit": {
+            "url": "https://www.eclipse.org/downloads/download.php?r=1&file=/technology/epp/downloads/release/2019-03/R/eclipse-java-2019-03-R-win32-x86_64.zip",
+            "hash": "sha512:e671454b53fe4bff098cfba8ff28da0f9ea940d9a0fee796629d3a2dc0ae7634d3d8a0788304aa3ad7d020a76a30ecf97f09f74314511f319700354e25ab6b7d"
+        }
+    },
+    "extract_dir": "eclipse",
+    "shortcuts": [
+        [
+            "eclipse.exe",
+            "Eclipse IDE for Java Developers"
+        ]
+    ],
+    "checkver": {
+        "url": "http://download.eclipse.org/technology/epp/downloads/release/release.xml",
+        "re": "\\<present\\>([\\d]{4}-[\\d]{2})\\/(?<r>[\\w]+)\\<\\/present\\>"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://www.eclipse.org/downloads/download.php?r=1&file=/technology/epp/downloads/release/$version/$matchR/eclipse-java-$version-$matchR-win32-x86_64.zip",
+                "hash": {
+                    "url": "https://download.eclipse.org/technology/epp/downloads/release/$version/$matchR/eclipse-java-$version-$matchR-win32-x86_64.zip.sha512",
+                    "find": "([a-fA-F0-9]{128})"
+                }
+            }
+        }
+    }
+}

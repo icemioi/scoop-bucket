@@ -1,0 +1,33 @@
+{
+    "homepage": "https://www.eclipse.org",
+    "license": "EPL-1.0",
+    "version": "2019-03",
+    "architecture": {
+        "64bit": {
+            "url": "https://www.eclipse.org/downloads/download.php?r=1&file=/technology/epp/downloads/release/2019-03/R/eclipse-committers-2019-03-R-win32-x86_64.zip",
+            "hash": "sha512:67fd5ac1a92c5394467e0b34f28e850159e8c3b12fecc6a865435442d32aef4399bb201a06a95a181d447835ff3440ba6f613f746438e874ad61322e74738842"
+        }
+    },
+    "extract_dir": "eclipse",
+    "shortcuts": [
+        [
+            "eclipse.exe",
+            "Eclipse IDE for Eclipse Committers"
+        ]
+    ],
+    "checkver": {
+        "url": "http://download.eclipse.org/technology/epp/downloads/release/release.xml",
+        "re": "\\<present\\>([\\d]{4}-[\\d]{2})\\/(?<r>[\\w]+)\\<\\/present\\>"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://www.eclipse.org/downloads/download.php?r=1&file=/technology/epp/downloads/release/$version/$matchR/eclipse-committers-$version-$matchR-win32-x86_64.zip",
+                "hash": {
+                    "url": "https://download.eclipse.org/technology/epp/downloads/release/$version/$matchR/eclipse-committers-$version-$matchR-win32-x86_64.zip.sha512",
+                    "find": "([a-fA-F0-9]{128})"
+                }
+            }
+        }
+    }
+}

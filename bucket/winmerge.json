@@ -1,0 +1,38 @@
+{
+    "version": "2.16.2",
+    "homepage": "http://winmerge.org",
+    "license": "GPL-2.0-only",
+    "architecture": {
+        "64bit": {
+            "url": "https://downloads.sourceforge.net/project/winmerge/stable/2.16.2/winmerge-2.16.2-x64-exe.zip",
+            "hash": "sha1:c379cf511e56aa895aa0dc727b1c845ec6e175e5"
+        },
+        "32bit": {
+            "url": "https://downloads.sourceforge.net/project/winmerge/stable/2.16.2/winmerge-2.16.2-exe.zip",
+            "hash": "sha1:ba89634b08468e2d7622fb56e40850f77065afb1"
+        }
+    },
+    "extract_dir": "WinMerge",
+    "bin": "WinMergeU.exe",
+    "shortcuts": [
+        [
+            "WinMergeU.exe",
+            "WinMerge"
+        ]
+    ],
+    "checkver": "WinMerge ([\\d\\.]+) - latest stable version",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://downloads.sourceforge.net/project/winmerge/stable/$version/winmerge-$version-x64-exe.zip"
+            },
+            "32bit": {
+                "url": "https://downloads.sourceforge.net/project/winmerge/stable/$version/winmerge-$version-exe.zip"
+            }
+        }
+    },
+    "notes": [
+        "If WinMerge fails to start, you probably need to install the Microsoft Visual C++ 2008 Redistributable package:",
+        "https://www.microsoft.com/en-au/download/details.aspx?id=5582"
+    ]
+}

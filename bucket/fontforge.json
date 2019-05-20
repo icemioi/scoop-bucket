@@ -1,0 +1,30 @@
+{
+    "homepage": "https://fontforge.github.io",
+    "license": "GPL-3.0-or-later",
+    "version": "20190413",
+    "url": "https://github.com/fontforge/fontforge/releases/download/20190413/FontForge-2019-04-13-Windows.exe",
+    "hash": "ae04fe3e46df0d16fc467304946b61b88e6e350f2366b991b272b5cc1aecf4d2",
+    "innosetup": true,
+    "shortcuts": [
+        [
+            "run_fontforge.exe",
+            "FontForge"
+        ],
+        [
+            "fontforge.bat",
+            "FontForge console"
+        ],
+        [
+            "fontforge-console.bat",
+            "FontForge interactive console"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/fontforge/fontforge",
+        "re": "/download/(?<path>[\\d]{8}/FontForge-(?<year>[\\d]{4})-(?<month>[\\d]{2})-(?<day>[\\d]{2})-Windows(?<release>[-r\\d]*?).exe)",
+        "replace": "${year}${month}${day}${release}"
+    },
+    "autoupdate": {
+        "url": "https://github.com/fontforge/fontforge/releases/download/$matchPath"
+    }
+}

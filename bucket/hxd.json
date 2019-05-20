@@ -1,0 +1,46 @@
+{
+    "homepage": "https://mh-nexus.de/en/hxd/",
+    "version": "2.2.1.0",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://mh-nexus.de/en/hxd/license.php"
+    },
+    "description": "Hex Editor and Disk Editor.",
+    "url": "https://mh-nexus.de/downloads/HxDSetup.zip",
+    "hash": "2bb4f5dd7effa7f32bad9bed88f8802a86d75de169d5ea0658eeba280132c2f8",
+    "architecture": {
+        "64bit": {
+            "installer": {
+                "script": [
+                    "Expand-InnoArchive \"$dir\\HxDSetup.exe\" -Removal",
+                    "Rename-Item \"$dir\\HxD64,3.exe\" \"$dir\\HxD.exe\"",
+                    "Remove-Item \"$dir\\*,*\" -Force"
+                ]
+            }
+        },
+        "32bit": {
+            "installer": {
+                "script": [
+                    "Expand-InnoArchive \"$dir\\HxDSetup.exe\" -Removal",
+                    "Rename-Item \"$dir\\HxD32,3.exe\" \"$dir\\HxD.exe\"",
+                    "Remove-Item \"$dir\\*,*\" -Force"
+                ]
+            }
+        }
+    },
+    "persist": "Settings",
+    "bin": "HxD.exe",
+    "shortcuts": [
+        [
+            "HxD.exe",
+            "HxD"
+        ]
+    ],
+    "checkver": {
+        "url": "https://mh-nexus.de/en/hxd/changelog.php",
+        "re": "v_([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://mh-nexus.de/downloads/HxDSetup.zip"
+    }
+}

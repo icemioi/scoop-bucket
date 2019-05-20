@@ -1,0 +1,51 @@
+{
+    "homepage": "https://xdebug.org/",
+    "license": {
+        "identifier": "Xdebug-1.01",
+        "url": "https://xdebug.org/license.php"
+    },
+    "version": "2.7.2-7.3",
+    "architecture": {
+        "64bit": {
+            "url": "https://xdebug.org/files/php_xdebug-2.7.2-7.3-vc15-x86_64.dll#/php_xdebug.dll",
+            "hash": "0b318fe78df5103b5078e57f18ea17c3d356c43a37529215140ae9ff76bf524c"
+        },
+        "32bit": {
+            "url": "https://xdebug.org/files/php_xdebug-2.7.2-7.3-vc15.dll#/php_xdebug.dll",
+            "hash": "9c85cf22057b6f0538d00cc8c4d38da1ac1ecd034bfc8783ad5e46be3ed00c1f"
+        }
+    },
+    "post_install": [
+        "$phpconfd = \"$persist_dir\\..\\php\\cli\\conf.d\"",
+        "$ini = \"zend_extension=$dir\\php_xdebug.dll`n[xdebug]`nxdebug.remote_enable=on`nxdebug.remote_autostart=on`nxdebug.remote_connect_back=on\"",
+        "if(!(test-path $phpconfd\\xdebug.ini)) {",
+        "    Write-Output \"Enabling extension $(Convert-Path $phpconfd)\\xdebug.ini\"",
+        "    Add-Content -Value $ini -Path \"$phpconfd\\xdebug.ini\"",
+        "} else {",
+        "    Write-Host -f Yellow \"PHP was not installed through scoop, you have to activate php_xdebug.dll manually! Add the following:`n\"",
+        "    Write-Host -f Cyan \"$ini`n`n\"",
+        "}"
+    ],
+    "notes": [
+        "Xdebug is already enabled if PHP was installed through scoop!",
+        "Otherwise add '$dir\\php_xdebug.dll' to your php.ini"
+    ],
+    "checkver": {
+        "url": "https://xdebug.org/download.php",
+        "re": "php_xdebug-([\\d.]+-7.3)-vc15-x86_64.dll"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://xdebug.org/files/php_xdebug-$version-vc15-x86_64.dll#/php_xdebug.dll"
+            },
+            "32bit": {
+                "url": "https://xdebug.org/files/php_xdebug-$version-vc15.dll#/php_xdebug.dll"
+            }
+        },
+        "hash": {
+            "url": "https://xdebug.org/download.php",
+            "regex": "$basename.+?([a-fA-F0-9]{64})"
+        }
+    }
+}

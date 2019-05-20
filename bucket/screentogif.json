@@ -1,0 +1,24 @@
+{
+    "homepage": "https://www.screentogif.com/",
+    "version": "2.17.1",
+    "description": "Screen, webcam and sketchboard recorder with an integrated editor.",
+    "license": "MS-PL",
+    "url": "https://github.com/NickeManarin/ScreenToGif/releases/download/2.17.1/ScreenToGif.2.17.1.Portable.zip",
+    "hash": "2aaef3853f2d8b171e3b31633646c6489134ced5cd0c416f7fed3c180e2d479a",
+    "bin": "ScreenToGif.exe",
+    "shortcuts": [
+        [
+            "ScreenToGif.exe",
+            "ScreenToGif"
+        ]
+    ],
+    "suggest": {
+        "FFmpeg": "ffmpeg"
+    },
+    "checkver": {
+        "github": "https://github.com/NickeManarin/ScreenToGif"
+    },
+    "autoupdate": {
+        "url": "https://github.com/NickeManarin/ScreenToGif/releases/download/$version/ScreenToGif.$version.Portable.zip"
+    }
+}

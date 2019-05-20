@@ -1,0 +1,31 @@
+{
+    "homepage": "https://www.qutebrowser.org/",
+    "license": "GPL-3.0-only",
+    "version": "1.6.2",
+    "persist": "config",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/qutebrowser/qutebrowser/releases/download/v1.6.2/qutebrowser-1.6.2-windows-standalone-amd64.zip",
+            "hash": "a4354d6a84cfaa52a5a4f29eaf56bb0a0e61b884f6d98883216e8d9da93c3221",
+            "extract_dir": "qutebrowser-1.6.2-x64"
+        }
+    },
+    "bin": "qutebrowser.exe",
+    "shortcuts": [
+        [
+            "qutebrowser.exe",
+            "qutebrowser"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/qutebrowser/qutebrowser"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/qutebrowser/qutebrowser/releases/download/v$version/qutebrowser-$version-windows-standalone-amd64.zip",
+                "extract_dir": "qutebrowser-$version-x64"
+            }
+        }
+    }
+}

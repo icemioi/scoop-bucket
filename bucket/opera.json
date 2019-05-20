@@ -1,0 +1,58 @@
+{
+    "version": "60.0.3255.95",
+    "description": "Fast, secure, easy-to-use browser.",
+    "homepage": "https://www.opera.com/",
+    "license": "Freeware",
+    "architecture": {
+        "64bit": {
+            "url": "https://download1.operacdn.com/pub/opera/desktop/60.0.3255.95/win/Opera_60.0.3255.95_Setup_x64.exe",
+            "hash": "2d2e4ce66dc7d666b9a401551c338989c4047fbacb146fdcc004ff3a5a805ed8"
+        },
+        "32bit": {
+            "url": "https://download1.operacdn.com/pub/opera/desktop/60.0.3255.95/win/Opera_60.0.3255.95_Setup.exe",
+            "hash": "c3edd44ddee5bcebcb05507cf64c95124f3f784de7478537d308a96ceb410e02"
+        }
+    },
+    "installer": {
+        "args": [
+            "/silent",
+            "/installfolder=\"$dir\"",
+            "/copyonly=1",
+            "/desktopshortcut=0",
+            "/startmenushortcut=0",
+            "/quicklaunchshortcut=0",
+            "/enable-stats=0",
+            "/enable-installer-stats=0",
+            "/launchbrowser=0"
+        ]
+    },
+    "uninstaller": {
+        "file": "launcher.exe",
+        "args": [
+            "/uninstall",
+            "/silent"
+        ]
+    },
+    "persist": "profile",
+    "shortcuts": [
+        [
+            "launcher.exe",
+            "Opera"
+        ]
+    ],
+    "checkver": {
+        "url": "http://get.opera.com/ftp/pub/opera/desktop/",
+        "regex": "([\\d+\\.]+)/",
+        "reverse": true
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://download1.operacdn.com/pub/opera/desktop/$version/win/Opera_$version_Setup_x64.exe"
+            },
+            "32bit": {
+                "url": "https://download1.operacdn.com/pub/opera/desktop/$version/win/Opera_$version_Setup.exe"
+            }
+        }
+    }
+}

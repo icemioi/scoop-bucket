@@ -1,0 +1,22 @@
+{
+    "homepage": "https://justgetflux.com/",
+    "description": "Makes the color of your computer's display adapt to the time of day, warm at night and like sunlight during the day",
+    "version": "4.104",
+    "url": "https://justgetflux.com/flux-setup4-104.exe#/flux-setup.exe",
+    "hash": "37bc248de9362c86fa8547e43526a019f29a8b3500d01edf25e8e8f38c96be9a",
+    "bin": "flux.exe",
+    "installer": {
+        "script": "cmd /c start /WAIT \"$dir\\flux-setup.exe\" /S /D=$dir"
+    },
+    "uninstaller": {
+        "file": "uninstall.exe",
+        "args": "/S"
+    },
+    "checkver": {
+        "url": "https://justgetflux.com/update/v4/windows-download.json",
+        "re": "([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://justgetflux.com/flux-setup$majorVersion-$minorVersion.exe#/flux-setup.exe"
+    }
+}

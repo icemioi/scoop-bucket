@@ -1,0 +1,45 @@
+{
+    "homepage": "https://www.gitkraken.com/",
+    "description": "A Git client which helps you track and manage changes to your code.",
+    "version": "5.0.4",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://www.gitkraken.com/eula"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://release.gitkraken.com/win64/gitkraken-5.0.4-full.nupkg",
+            "hash": "sha1:79b5c61ac488c63bfd51ddf0dc3e8d20be90a10e"
+        },
+        "32bit": {
+            "url": "https://release.gitkraken.com/win32/gitkraken-5.0.4-full.nupkg",
+            "hash": "sha1:71ee74e6f79762527166a2d30408ded019f3773b"
+        }
+    },
+    "extract_dir": "lib\\net45",
+    "bin": "gitkraken.exe",
+    "shortcuts": [
+        [
+            "gitkraken.exe",
+            "GitKraken"
+        ]
+    ],
+    "checkver": {
+        "url": "https://release.gitkraken.com/win64/RELEASES?id=gitkraken&localVersion=0&arch=amd64",
+        "re": "gitkraken-([\\d.]+)-full.nupkg",
+        "reverse": true
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://release.gitkraken.com/win64/gitkraken-$version-full.nupkg"
+            },
+            "32bit": {
+                "url": "https://release.gitkraken.com/win32/gitkraken-$version-full.nupkg"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/RELEASES"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "homepage": "http://brackets.io/",
+    "version": "1.14",
+    "license": "MIT",
+    "url": "https://github.com/adobe/brackets/releases/download/release-1.14/Brackets.Release.1.14.msi",
+    "hash": "e26205e7591336e08c81cfa1b9ff7252b9597799d8b3408f20b33c41bf7333be",
+    "extract_dir": "Brackets",
+    "bin": "brackets.exe",
+    "shortcuts": [
+        [
+            "brackets.exe",
+            "Brackets"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/adobe/brackets",
+        "re": "/releases/tag/release-([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://github.com/adobe/brackets/releases/download/release-$version/Brackets.Release.$version.msi"
+    }
+}

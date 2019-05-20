@@ -1,0 +1,27 @@
+{
+    "homepage": "http://www.jrsoftware.org/isinfo.php",
+    "version": "6.0.2",
+    "description": "Installer for Windows programs.",
+    "license": "http://www.jrsoftware.org/files/is/license.txt",
+    "url": "http://files.jrsoftware.org/is/6/innosetup-6.0.2.exe",
+    "hash": "4af479bd44e2bfb2a4bfab6a19f9563e370ef52d86362e7b3d198e9daff62b64",
+    "innosetup": true,
+    "suggest": {
+        "Inno Script Studio": "inno-script-studio"
+    },
+    "bin": "iscc.exe",
+    "post_install": "Invoke-WebRequest -Uri 'http://www.jrsoftware.org/download.php/iscrypt.dll' -OutFile \"$dir\\ISCrypt.dll\"",
+    "shortcuts": [
+        [
+            "Compil32.exe",
+            "Inno Setup Compiler"
+        ]
+    ],
+    "checkver": {
+        "url": "http://www.jrsoftware.org/isdl.php",
+        "regex": "innosetup-([0-9.]+).exe"
+    },
+    "autoupdate": {
+        "url": "http://files.jrsoftware.org/is/$majorVersion/innosetup-$version.exe"
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "homepage": "https://www.eclipse.org",
+    "license": "EPL-1.0",
+    "version": "2019-03",
+    "architecture": {
+        "64bit": {
+            "url": "https://www.eclipse.org/downloads/download.php?r=1&file=/technology/epp/downloads/release/2019-03/R/eclipse-cpp-2019-03-R-win32-x86_64.zip",
+            "hash": "sha512:d2b0ffe73a9b3ac9c5a523a010cfe7b23cae4751047bf7b2af2177d3a55b5c1394269a0011f19bf248000b223af1047734886665786a1f2425e2ad6bd1ad5fae"
+        }
+    },
+    "extract_dir": "eclipse",
+    "shortcuts": [
+        [
+            "eclipse.exe",
+            "Eclipse IDE for C and C++ Developers"
+        ]
+    ],
+    "checkver": {
+        "url": "http://download.eclipse.org/technology/epp/downloads/release/release.xml",
+        "re": "\\<present\\>([\\d]{4}-[\\d]{2})\\/(?<r>[\\w]+)\\<\\/present\\>"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://www.eclipse.org/downloads/download.php?r=1&file=/technology/epp/downloads/release/$version/$matchR/eclipse-cpp-$version-$matchR-win32-x86_64.zip",
+                "hash": {
+                    "url": "https://download.eclipse.org/technology/epp/downloads/release/$version/$matchR/eclipse-cpp-$version-$matchR-win32-x86_64.zip.sha512",
+                    "find": "([a-fA-F0-9]{128})"
+                }
+            }
+        }
+    }
+}

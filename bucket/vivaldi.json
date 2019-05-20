@@ -1,0 +1,50 @@
+{
+    "homepage": "https://vivaldi.com/",
+    "description": "An innovatively designed web browser, based on Blink, for users in Vivaldi.net community that replaced departed My Opera",
+    "version": "2.5.1525.43",
+    "license": {
+        "identifier": "freeware,BSD",
+        "url": "https://vivaldi.com/privacy/vivaldi-end-user-license-agreement/"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://downloads.vivaldi.com/stable/Vivaldi.2.5.1525.43.x64.exe#/dl.7z",
+            "hash": "4519f090a84619cbda540a1f4390aee2b2afbd162e3f325782153efc5f83e36f"
+        },
+        "32bit": {
+            "url": "https://downloads.vivaldi.com/stable/Vivaldi.2.5.1525.43.exe#/dl.7z",
+            "hash": "d04ae517acc951d77f6f05af7086930f8d1d5cd0854bba7b76e1a3fdd61353d7"
+        }
+    },
+    "installer": {
+        "script": [
+            "Expand-7zipArchive \"$dir\\vivaldi.7z\" \"$dir\"",
+            "Move-Item \"$dir\\Vivaldi-bin\" \"$dir\\Application\"",
+            "Remove-Item \"$dir\\vivaldi.7z\"",
+            "Remove-Item \"$dir\\Application\\update_notifier.exe\"",
+            "Write-Output \"// Vivaldi Standalone\" | Set-Content \"$dir\\Application\\stp.viv\""
+        ]
+    },
+    "bin": "Application\\vivaldi.exe",
+    "shortcuts": [
+        [
+            "Application\\vivaldi.exe",
+            "Vivaldi"
+        ]
+    ],
+    "persist": "User Data",
+    "checkver": {
+        "url": "https://vivaldi.com/download/",
+        "re": "Vivaldi\\.([\\d.]+)\\.exe"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://downloads.vivaldi.com/stable/Vivaldi.$version.x64.exe#/dl.7z"
+            },
+            "32bit": {
+                "url": "https://downloads.vivaldi.com/stable/Vivaldi.$version.exe#/dl.7z"
+            }
+        }
+    }
+}

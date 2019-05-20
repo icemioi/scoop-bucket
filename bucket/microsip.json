@@ -1,0 +1,27 @@
+{
+    "homepage": "https://www.microsip.org",
+    "description": "Open source portable SIP softphone for Windows based on PJSIP stack",
+    "version": "3.19.15",
+    "license": "GNU GPL v2",
+    "url": "https://www.microsip.org/download/MicroSIP-Lite-3.19.15.zip",
+    "hash": "b80cd4335456c5a7f7d8dfac9ff0ab86c11b057b9edf6f00ca363b0a81d12697",
+    "bin": "MicroSIP.exe",
+    "persist": [
+        "Contacts.xml",
+        "MicroSIP.ini"
+    ],
+    "shortcuts": [
+        [
+            "MicroSIP.exe",
+            "MicroSIP"
+        ]
+    ],
+    "pre_install": "ForEach ($emptyFile in $manifest.persist) {New-Item \"$dir\\$emptyFile\" -ItemType file -ErrorAction SilentlyContinue | Out-Null}",
+    "checkver": {
+        "url": "https://www.microsip.org/downloads",
+        "re": "MicroSIP-Lite-([\\d\\.]*).exe"
+    },
+    "autoupdate": {
+        "url": "https://www.microsip.org/download/MicroSIP-Lite-$version.zip"
+    }
+}

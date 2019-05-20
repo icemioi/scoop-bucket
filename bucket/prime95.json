@@ -1,0 +1,44 @@
+{
+    "homepage": "https://www.mersenne.org/download/",
+    "description": "Free Mersenne Prime Search Software",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://www.mersenne.org/legal/#EULA"
+    },
+    "version": "29.8b3",
+    "bin": "prime95.exe",
+    "architecture": {
+        "64bit": {
+            "url": "https://www.mersenne.org/ftp_root/gimps/p95v298b3.win64.zip",
+            "hash": "ca54dbb436abaf9a5d7a425323d2767bb580135d1f63846aa356893399d8a656"
+        },
+        "32bit": {
+            "url": "https://www.mersenne.org/ftp_root/gimps/p95v298b3.win32.zip",
+            "hash": "af8bb419a5fbfed2d56d37dbcfda9d7a36d9095ed43df9893d5fb56ed11c2e9a"
+        }
+    },
+    "shortcuts": [
+        [
+            "prime95.exe",
+            "Prime95"
+        ]
+    ],
+    "checkver": {
+        "url": "https://www.mersenne.org/download/",
+        "regex": "Windows:\\s+64-bit</td><td>([^<]+)</td>"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://www.mersenne.org/ftp_root/gimps/p95v$cleanVersion.win64.zip"
+            },
+            "32bit": {
+                "url": "https://www.mersenne.org/ftp_root/gimps/p95v$cleanVersion.win32.zip"
+            }
+        },
+        "hash": {
+            "url": "https://www.mersenne.org/download/",
+            "find": "$basename[^>]+>[^>]+>[^>]+>[^>]+>SHA256:<br>([^<]+)"
+        }
+    }
+}

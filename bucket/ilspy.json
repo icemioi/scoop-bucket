@@ -1,0 +1,15 @@
+{
+    "homepage": "http://ilspy.net/",
+    "version": "4.0.1",
+    "license": "MIT",
+    "url": "https://github.com/icsharpcode/ILSpy/releases/download/v4.0.1/ILSpy_binaries_4.0.1.4530.zip",
+    "hash": "e79baa7c88b53698f397f385e0ca2c127b60e91887be62d57ef417ade73106f2",
+    "bin": "ILSpy.exe",
+    "checkver": {
+        "github": "https://github.com/icsharpcode/ILSpy",
+        "re": "download/v(?<version>[\\d.]+)/ILSpy_binaries_(?<build>[\\d.]+).zip"
+    },
+    "autoupdate": {
+        "url": "https://github.com/icsharpcode/ILSpy/releases/download/v$version/ILSpy_binaries_$matchBuild.zip"
+    }
+}

@@ -1,0 +1,48 @@
+{
+    "homepage": "https://www.gnu.org/software/emacs/",
+    "license": "GPL-3.0-only",
+    "version": "26.2",
+    "architecture": {
+        "64bit": {
+            "url": "https://ftpmirror.gnu.org/gnu/emacs/windows/emacs-26/emacs-26.2-x86_64.zip",
+            "hash": "715b142278596b77da633e7ff86dd24d10ed601c8ece2bcf60a0cafa4dc38c2a"
+        },
+        "32bit": {
+            "url": "https://ftpmirror.gnu.org/gnu/emacs/windows/emacs-26/emacs-26.2-i686.zip",
+            "hash": "114bae98653eb27a7755df92fa17fb7c7e1ff00b188f4aa4bef8033805306d4a"
+        }
+    },
+    "extract_dir": ".",
+    "bin": [
+        "bin\\runemacs.exe",
+        "bin\\emacs.exe",
+        "bin\\emacsclientw.exe",
+        "bin\\etags.exe",
+        "bin\\ctags.exe"
+    ],
+    "checkver": {
+        "url": "https://www.gnu.org/software/emacs/",
+        "re": "Emacs ([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://ftpmirror.gnu.org/gnu/emacs/windows/emacs-$majorVersion/emacs-$version-x86_64.zip"
+            },
+            "32bit": {
+                "url": "https://ftpmirror.gnu.org/gnu/emacs/windows/emacs-$majorVersion/emacs-$version-i686.zip"
+            }
+        }
+    },
+    "shortcuts": [
+        [
+            "bin\\runemacs.exe",
+            "Emacs"
+        ],
+        [
+            "bin\\emacsclientw.exe",
+            "Emacs Client",
+            "-c -n -a \"\""
+        ]
+    ]
+}
