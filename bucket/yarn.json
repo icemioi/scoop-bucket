@@ -1,0 +1,29 @@
+{
+    "homepage": "https://yarnpkg.com/",
+    "description": "📦🐈Fast, reliable, and secure dependency management.",
+    "license": "BSD-2-Clause",
+    "version": "1.16.0",
+    "suggest": {
+        "Node.js": [
+            "nodejs",
+            "nodejs-lts"
+        ],
+        "NVM": "dorado/nvm-windows"
+    },
+    "url": "https://yarnpkg.com/downloads/1.16.0/yarn-1.16.0.msi",
+    "hash": "77478842ca8507eb12a2bbe53ddfa4d637e28531668804fbccdb245ab347c947",
+    "installer": {
+        "script": "add_first_in_path \"$env:LOCALAPPDATA\\Yarn\\bin\" $global"
+    },
+    "uninstaller": {
+        "script": "remove_from_path \"$env:LOCALAPPDATA\\Yarn\\bin\" $global"
+    },
+    "env_add_path": "Yarn\\bin",
+    "checkver": {
+        "url": "https://yarnpkg.com/latest-version",
+        "re": "([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://yarnpkg.com/downloads/$version/yarn-$version.msi"
+    }
+}
