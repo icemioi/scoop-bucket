@@ -1,0 +1,75 @@
+{
+    "version": "1.7.18346",
+    "description": "PotPlayer. A multimedia software player developed for the Microsoft Windows operating system.",
+    "homepage": "https://potplayer.daum.net/",
+    "architecture": {
+        "64bit": {
+            "url": "https://t1.daumcdn.net/potplayer/PotPlayer/Version/Latest/PotPlayerSetup64.exe#/cosi.7z",
+            "hash": "053a8148f7508e9c3e81b944d4e3c0b587e8c54ec5a490e63f76d2ead1c307fe",
+            "shortcuts": [["PotPlayerMini64.exe", "PotPlayer Mini"]]
+        },
+        "32bit": {
+            "url": "https://t1.daumcdn.net/potplayer/PotPlayer/Version/Latest/PotPlayerSetup.exe#/cosi.7z",
+            "hash": "14400cbd85ac761a429a286c97b0f5d64fb1e7ec1b8b57dbb532eac29bb9f41c",
+            "shortcuts": [["PotPlayerMini.exe", "PotPlayer Mini"]]
+        }
+    },
+    "installer": {
+        "script": [
+            "Remove-Item \"$dir\\`$*\" -Force -Recurse",
+            "$setFiles = @('PotPlayerMini64.ini', 'PotPlayerMini.ini')",
+            "$CONT = @(",
+            "    '[Settings]'",
+            "    'AutoAddPL=1'",
+            "    'AutoDetectTimePL=1'",
+            "    'AutoDownloadFile=0'",
+            "    'AutoPlayOnStart=1'",
+            "    'AutoUpdateStart=0'",
+            "    'AppendFilePL=1'",
+            "    'CheckAutoUpdate=0'",
+            "    'DropMousePos=1'",
+            "    'FastAutoUpdate=0'",
+            "    'MediaKeyGlobal=1'",
+            "    'nVideoRen2=15'",
+            "    'RememberPosition=1'",
+            "    'RememberPositionAudio=1'",
+            "    'SavePlayPosPL=1'",
+            "    'ScreenFitMode=2'",
+            "    'SkinPopupMenuStyle=2'",
+            "    ''",
+            "    '[MainShortCutList]'",
+            "    '0=74,4,10069,0'",
+            "    '1=72,6,10863,0'",
+            "    '2='",
+            ")",
+            "$finalFile = $CONT -join \"`r`n\"",
+            "    # Set Configs for all executables",
+            "foreach ($f in $setFiles) {",
+            "    if (-not (Test-Path \"$persist_dir\\$f\")) {",
+            "        Write-Host 'File' $f 'does not exists. Creating' -f Yellow",
+            "        Set-Content \"$dir\\$f\" $finalFile -Encoding Ascii",
+            "    }",
+            "}"
+        ]
+    },
+    "persist": [
+        "Capture",
+        "Playlist",
+        "PotPlayerMini.ini",
+        "PotPlayerMini64.ini"
+    ],
+    "checkver": {
+        "url": "https://potplayer.daum.net/update.html?lang=en&bit",
+        "regex": "\\[([\\d\\.]+)\\]"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://t1.daumcdn.net/potplayer/PotPlayer/Version/Latest/PotPlayerSetup64.exe#/cosi.7z"
+            },
+            "32bit": {
+                "url": "https://t1.daumcdn.net/potplayer/PotPlayer/Version/Latest/PotPlayerSetup.exe#/cosi.7z"
+            }
+        }
+    }
+}
